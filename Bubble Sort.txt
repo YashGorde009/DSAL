@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int n,i,j,pass,temprory,a[10];
+    cout << "Enter the number of elements : ";
+    cin >> n;
+    cout << "Enter elements : \n";
+    for(i=0;i<n;i++){
+        cout << "Enter " << (i+1) << " Element : ";
+        cin >> a[i];
+    }
+    for(i=0;i<n-1;i++){
+        for(j=0;j<n-i-1;j++){
+            if(a[j]>a[j+1]){
+                temprory=a[j];
+                a[j]=a[j+1];
+                a[j+1]=temprory;
+            }
+        }
+    }
+    for(pass=0;pass<n;pass++){
+        cout << a[pass] << endl;    }
+    return 0;
+}

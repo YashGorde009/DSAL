@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+#include<stdlib.h>
+int main(){
+    int n,i,a[10],lower=0,higher,middle,flag=0,number;
+    cout << "Enter the number of elements : ";
+    cin >> n;
+    cout << "Enter elements : \n";
+    for(i=0;i<n;i++){
+        cout << "Enter " << (i+1) << " Elements : ";
+        cin >> a[i];
+    }
+    cout << "Enter Number which you want to be searched : ";
+    cin >> number;
+    higher=n-1;
+    while(lower<=higher){
+        middle=(lower+higher)/2;
+        if(number==a[middle]){
+            flag=1;
+            break;
+        }
+        else if(number<a[middle]){
+            higher=middle-1;
+        }
+        else{
+            lower=middle+1;
+        }
+    }
+    if(flag==1){
+        cout << "Number is Found";
+    }
+    else{
+        cout<< "Number is not Found";
+    }
+}
